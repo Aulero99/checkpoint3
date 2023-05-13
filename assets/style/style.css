@@ -1,0 +1,451 @@
+/* BASIC STYLES HERE */
+:root {
+    --color1: #dadada;
+    --color2: #f3f3f3;
+    --color3: #250001;
+    --color4: #a5a5a5;
+
+
+    --redBg: #cb8589;
+    --redTxt: #604848;
+    --redSavDel: #a9393e;
+
+    --orangeBg: #d7b29d;
+    --orangeTxt: #605248;
+    --orangeSavDel: #c97443;
+
+    --yellowBg: #FFE894;
+    --yellowTxt: #605D48;
+    --yellowSavDel: #a47e00;
+
+    --greenBg: #dde8b9;
+    --greenTxt: #48604A;
+    --greenSavDel: #558452;
+
+    --tealBg: #BAE8E8;
+    --tealTxt: #485E60;
+    --tealSavDel: #2c8b82;
+
+    --blueBg: #BABAE8;
+    --blueTxt: #484F60;
+    --blueSavDel: #545898;
+
+    --purpleBg: #D5BAE8;
+    --purpleTxt: #564860;
+    --purpleSavDel: #9c38df;
+
+    --whiteBGTxt: #fefefe;
+    --blackBgTxt: #250001;
+}
+
+input, select, textarea, button, h4, h5, option{
+    all:unset;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+img {height: 100%;}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    background-color: var(--color1);
+    color: var(--color3);
+    height: 4rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header .user {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .user .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header .user .info .title {
+    background-color: black;
+    color: white;
+    padding: 0.25rem 0.35rem;
+    border: 0;
+    border-radius: 0.2rem;
+}
+
+header .user .info .logout {
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    padding: 0.25rem 0.35rem;
+    border: 0;
+    border-radius: 0.2rem;
+}
+
+header .user .info .logout:hover {
+    background-color: #2c8b82;
+}
+
+header h5 {
+    padding: 0 1rem;
+}
+
+main{
+    color: var(--color3);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 !important;
+
+}
+
+main section{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    background-color: var(--color1);
+    color: var(--color3);
+    position: relative;
+    margin-bottom: -7.55rem;
+    transition: 210ms ease-in-out;
+
+    justify-self: flex-end;
+}
+
+footer:hover{
+    margin-bottom: 0;
+}
+
+
+/* NOTE the Card Selection Area styling */
+.card-group.card-group-scroll {
+    overflow-x: auto;
+    overflow-y:unset;
+    flex-wrap: nowrap;
+    height: 14rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.notecard{
+    background-color: var(--color2);
+    padding: 0;
+    border: 0;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 11rem;
+    margin: 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+
+    cursor: pointer;
+    transition: 100ms;
+
+    box-shadow: 0.5rem 0.5rem 1rem -0.65rem rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0.5rem 0.5rem 1rem -0.65rem rgba(0,0,0,0.3);
+    -moz-box-shadow: 0.5rem 0.5rem 1rem -0.65rem rgba(0,0,0,0.3);
+}
+.notecard:hover {
+    height: 11.75rem;
+}
+.notecard-body {
+    padding: 0.5rem;
+    max-height: 7rem;
+    overflow: hidden;
+}
+.notecard-body h5{
+    text-align: left;
+    text-indent: 3%;
+    margin: 0 0 0.5rem 0;
+}
+.notecard-body p{
+    font-size: 0.75rem;
+    padding: 0;
+    margin: 0;
+}
+.notecard-footer {
+    color: var(--color3);
+    justify-self: flex-end;
+    padding: 0.5rem;
+    font-size: 0.55rem;
+    height: 2rem;
+    width: 100%;
+    background-color: var(--color4);
+}
+
+
+/* NOTE the active notecard styling */
+.active-notecard{
+    width: 95%;
+    min-width: 300px;
+    height: 85%;
+    border: 0;
+    border-radius: 0.25rem;
+    padding: 1rem;
+
+    box-shadow: 0.5rem 0.5rem21rem -0.65rem rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0.5rem 0.5rem 2rem -0.65rem rgba(0,0,0,0.3);
+    -moz-box-shadow: 0.5rem 0.5rem 2rem -0.65rem rgba(0,0,0,0.3);
+}
+.active-notecard form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.active-notecard form .info {
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+.active-notecard form .info input{
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.205);
+    font-size: 1.70rem;
+    height: 3rem;
+    width: calc(100% - 1rem);
+    border-radius: 0.15rem;
+    transition: 100ms;
+    border: 0.5rem solid transparent;
+}
+.active-notecard form .info input:focus{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0;
+    border:solid rgba(255, 255, 255, 0.5);
+    border-width: 0.15rem;
+    border: 0.5rem solid transparent;
+}
+.active-notecard form .info select{
+    background-color: rgba(255, 255, 255, 0.205);
+    border: 0;
+    border:solid rgba(255, 255, 255, 0.5);
+    border-width: 0.15rem;
+    border: 0.5rem solid transparent;
+}
+.active-notecard form .content{
+    width: 100%;
+    padding: 0.25rem;
+}
+.active-notecard form .content textarea{
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    border: 0;
+    border-radius: 0.25rem;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.205);
+    border: 0.5rem solid transparent;
+    transition: 100ms;
+}
+.active-notecard form .content textarea:focus{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0;
+    border: 0.5rem solid transparent;
+}
+
+
+/* NOTE the newcard styling */
+.newcard {
+    background-color: var(--color2);
+    text-align: center;
+    padding: 0;
+    border: 0;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 11rem;
+    margin: 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+
+    cursor: pointer;
+    transition: 100ms;
+
+    box-shadow: 0.5rem 0.5rem 1rem -0.65rem rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0.5rem 0.5rem 1rem -0.65rem rgba(0,0,0,0.3);
+    -moz-box-shadow: 0.5rem 0.5rem 1rem -0.65rem rgba(0,0,0,0.3);
+}
+.newcard h4{
+    font-size: 2rem;
+    height: 3rem;
+}
+.newcard p{
+    margin-bottom: 4.5rem;
+    font-weight: bold;
+}
+.newcard:hover {
+    height: 11.75rem;
+}
+
+
+/* NOTE Save and Delete Defaults */
+.delete{
+    justify-self: flex-end;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    width: 42%;
+}
+.save {
+    justify-self: flex-end;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    width: 42%;
+}
+
+
+/*NOTE Colors of Notecards VVVV*/
+
+
+/* NOTE Red Styling */
+.red{
+    color: var(--redTxt);
+    background-color: var(--redBg);
+}
+
+.red .save, .red .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--redSavDel);
+}
+
+
+/* NOTE Orange Styling */
+.orange{
+    color: var(--orangeTxt);
+    background-color: var(--orangeBg);
+}
+
+.orange .save, .orange .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--orangeSavDel);
+}
+
+
+/* NOTE Yellow Styling */
+.yellow {
+    color: var(--yellowTxt);
+    background-color: var(--yellowBg);
+}
+.yellow .save, .yellow .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--yellowSavDel);
+}
+
+
+/* NOTE Green Styling */
+.green{
+    color: var(--greenTxt);
+    background-color: var(--greenBg);
+}
+.green .save, .green .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--greenSavDel);
+}
+
+
+/* NOTE Teal Styling */
+.teal{
+    color: var(--tealTxt);
+    background-color: var(--tealBg);
+}
+.teal .save, .teal .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--tealSavDel);
+}
+
+
+/* NOTE Blue Styling */
+.blue{
+    color: var(--blueTxt);
+    background-color: var(--blueBg);
+}
+.blue .save, .blue .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--blueSavDel);
+}
+
+
+/* NOTE Purple Styling */
+.purple{
+    color: var(--purpleTxt);
+    background-color: var(--purpleBg);
+}
+.purple .save, .purple .delete{
+    color: var(--whiteBGTxt);
+    background-color: var(--purpleSavDel);
+}
+
+
+/* NOTE White styling */
+.white {
+    color: var(--blackBgTxt);
+    background-color: var(--whiteBGTxt);
+}
+.white form .info input{
+    background-color: rgba(192, 192, 192, 0.205);
+}
+.white form .info input:focus{
+    background-color: rgba(192, 192, 192, 0.130);
+}
+.white form .info select{
+    background-color: rgba(192, 192, 192, 0.205);
+}
+.white form .content textarea{
+    background-color: rgba(192, 192, 192, 0.205);
+}
+.white form .content textarea:focus{
+    background-color: rgba(192, 192, 192, 0.130);
+}
+
+
+/* NOTE Black Styling */
+.black {
+    color: white;
+    background-color: black;
+}
+.black .save, .black .delete{
+    color: var(--blackBgTxt);
+    background-color: var(--whiteBGTxt);
+}
+.black option{
+    color: black;
+}
