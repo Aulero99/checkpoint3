@@ -12,11 +12,12 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Note').Note[]} */  
   notes = loadState('notes', [Note])
 
-    users = [
-      new User({name:'auston',notes:0}),
-      new User({name:'sheldon',notes:0}),
-      new User({name:'mary',notes:0}),
-    ]
+  /** @type {import('./Models/User').User[]} */  
+  users = [
+    new User({name:'auston',notes:0}),
+    new User({name:'sheldon',notes:0}),
+    new User({name:'mary',notes:0}),
+  ]
 
   activeNote = null
 

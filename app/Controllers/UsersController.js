@@ -3,7 +3,7 @@ import { Pop } from "../Utils/Pop.js";
 import { usersService } from "../Services/UsersService.js";
 import { setHTML } from "../Utils/Writer.js";
 
-// TODO This is not working for.....some reason. I don't know
+// TODO This is not working for.....some reason. Fix it somehow
 // function _drawTemplateUser(){
 //     let users = appState.users
 //     console.log('the users are',users)
@@ -29,12 +29,12 @@ function _drawUser(){
     let logged = ''
     let loggedStyle = ''
     // @ts-ignore
-    if( name != '' ){ logged = 'LOGOUT'; loggedStyle = 'info'}
+    if( name != '' ){ logged = 'LOGOUT'; loggedStyle = 'info' }
     else{ logged = 'LOGIN'; order = 1; loggedStyle = 'login' }
 
     let autoSaveValue = ''
-    if (autoSave == true){autoSaveValue = 'on'}
-    else{autoSaveValue = 'off'}
+    if ( autoSave == true ){ autoSaveValue = 'on' }
+    else{ autoSaveValue = 'off' }
     
     // Since the user is only text editing, there isn't really a need to set up a model for it, however
     // if the user had a user page, then the need for a user model would arise
@@ -61,7 +61,7 @@ export class UsersController {
         appState.on('notesNum', _drawUser)
         appState.on('autoSave', _drawUser)
         
-        //TODO this code pulls from the template, but for some reason will not write, I do not know why
+//TODO this code pulls from the template, but for some reason will not write, I do not know why
         // _drawTemplateUser()
         // appState.on('notesNum', _drawTemplateUser)
         // appState.on('autoSave', _drawTemplateUser)
