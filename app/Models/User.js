@@ -3,10 +3,10 @@
 export class User {
   constructor(data) {
     this.name = data.name
-    this.notes = data.notes
+    this.notes = data.notes || 0
   }
 
-  get UserTemplate() {
+  get UserTemplate(){
     return /*html*/`
         <div class="title">USER: <h5>${this.ComputeName}</h5></div>
         <div class="title">NOTES: <h5>${this.notes}</h5></div>

@@ -1,6 +1,6 @@
 import { appState } from "../AppState.js";
-import { saveState } from "../Utils/Store.js";
-import { User } from "../Models/User.js";
+// import { saveState } from "../Utils/Store.js";
+// import { User } from "../Models/User.js";
 
 class UsersService{
     autosave() {
@@ -24,7 +24,7 @@ class UsersService{
             appState.userName = userLower
         }catch (error) {console.error(error)}
 
-        // asks the numcheck to check to see how many notes they have
+        // asks the numCheck to check to see how many notes they have
         this.noteNumCheck()
     }
 
@@ -33,7 +33,7 @@ class UsersService{
         let notes = appState.notes
         let filteredNotes = notes.filter(n => n.user == appState.userName)
 
-        // commits the number of notes to the appstate
+        // commits the number of notes to the appState
         appState.notesNum = filteredNotes.length
 
         // lets the controllers know that there was a change on notesNum
