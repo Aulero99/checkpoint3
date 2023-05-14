@@ -9,6 +9,7 @@ export class Note{
         this.edited = data.edited || 'Never'
         this.color = data.color || 'white'
         this.user = data.user 
+        this.saved = data.saved || true
     }
 
     get NoteTemplate() {
@@ -34,11 +35,11 @@ export class Note{
     get ActiveTemplate(){
         return/*html*/`
         <div class="col-12 active-notecard ${this.color}">
-            <form action="" onsubmit="app.notesController.alterNote('${this.id}')">
+            <form action="" onsubmit="app.notesController.alterNote('${this.id}')" id="activeCardHTM">
                 <div class="info">
 
-                    <input type="text" name="title" placeholder="New Note" value="${this.title}" type="text" minLength="3" maxlength="15">
-                    <select type="text" name="color" onchange="app.notesController.changeColor('${this.id}',value)">
+                    <input type="text" onblur="app.notesController.alterContent('${this.id}', value, 'title')" name="title" placeholder="New Note" value="${this.title}" type="text" minLength="3" maxlength="15">
+                    <select type="text" name="color" onchange="app.notesController.alterContent('${this.id}', value, 'color')">
                         <option>-- Color --</option>
                         <option value="white">White</option>
                         <option value="red">Red</option>
@@ -64,7 +65,7 @@ export class Note{
                     </div>
                 </div>
                 <div class="content">
-                    <textarea name="content" placeholder="Jot Something Down">${this.content}</textarea>
+                    <textarea onblur="app.notesController.alterContent('${this.id}', value, 'content')" name="content" placeholder="Jot Something Down">${this.content}</textarea>
                 </div>
             </form>
       </div>

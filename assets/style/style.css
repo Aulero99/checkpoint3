@@ -61,7 +61,6 @@ header{
     background-color: var(--color1);
     color: var(--color3);
     height: 4rem;
-    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -77,12 +76,61 @@ header .user {
     align-items: center;
 }
 
-header .user .info {
+header .user .img-container {
+    height: 100%;
+    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: row;
+}
+
+header .user .note-count{
+    margin-left: 0.1rem;
+    height: 100%;
+    border: solid;
+    border-color: black;
+    border-width: 0.209rem;
+    border-radius: 0.31rem;
+    font-size: 3.2rem;
+    padding: 0 0.1rem 0.27rem 0.1rem;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
+
+header .user .info {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    align-self: flex-start;
+    background-color: var(--color1);
+    padding: 1rem 0.5rem 0 0.5rem;
+    overflow: hidden;
+    height: 4rem;
+    margin-right: 0.5rem;
+    border-bottom: solid black 0.25rem;
+    transition: 300ms;
+    justify-content: space-between;
+    min-width: 9rem;
+}
+
+header .user .login{
+    z-index: 2;
+    align-self: flex-start;
+    background-color: var(--color1);
+    padding: 1rem 0.5rem 0 0.5rem;
+    overflow: hidden;
+    height: 4rem;
+    margin-right: 0.5rem;
+    border-bottom: solid black 0.25rem;
+    transition: 300ms;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header .user .info:hover{
+    height: 13rem;
+}
+
 
 header .user .info .title {
     background-color: black;
@@ -90,6 +138,9 @@ header .user .info .title {
     padding: 0.25rem 0.35rem;
     border: 0;
     border-radius: 0.2rem;
+    margin-bottom: 1rem;
+    height: 2.1rem;
+    text-align: center;
 }
 
 header .user .info .logout {
@@ -99,40 +150,66 @@ header .user .info .logout {
     padding: 0.25rem 0.35rem;
     border: 0;
     border-radius: 0.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+header .user .info .autosave-toggle {
+    background-color: black;
+    color: white;
+    padding: 0.25rem 0.35rem;
+    border: 0;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+    height: 2.1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+header .user .info .autosave-toggle.on {
+    background-color: var(--greenTxt);
+}
+
+header .user .info .autosave-toggle.off {
+    background-color: var(--redSavDel);
 }
 
 header .user .info .logout:hover {
     background-color: #2c8b82;
 }
 
-header h5 {
-    padding: 0 1rem;
-}
-
-main{
+main {
     color: var(--color3);
     display: flex;
     justify-content: center;
     align-items: stretch;
     padding: 0 !important;
-
+    top: 4rem;
+    position: absolute;
+    height: calc(100vh - 10.5rem);
 }
 
-main section{
+
+main section {
     width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-footer{
+
+footer {
     background-color: var(--color1);
     color: var(--color3);
     position: relative;
     margin-bottom: -7.55rem;
     transition: 210ms ease-in-out;
-
-    justify-self: flex-end;
+    /* justify-self: flex-end; */
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
 }
+
 
 footer:hover{
     margin-bottom: 0;
@@ -201,7 +278,19 @@ footer:hover{
 
 
 /* NOTE the active notecard styling */
-.active-notecard{
+.active-notecard {
+    width: 95%;
+    min-width: 300px;
+    height: 85%;
+    min-height: 230px;
+    border: 0;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    box-shadow: 0.5rem 0.5rem21rem -0.65rem rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0.5rem 0.5rem 2rem -0.65rem rgba(0,0,0,0.3);
+    -moz-box-shadow: 0.5rem 0.5rem 2rem -0.65rem rgba(0,0,0,0.3);
+}
+/* .active-notecard{
     width: 95%;
     min-width: 300px;
     height: 85%;
@@ -212,7 +301,7 @@ footer:hover{
     box-shadow: 0.5rem 0.5rem21rem -0.65rem rgba(0,0,0,0.3);
     -webkit-box-shadow: 0.5rem 0.5rem 2rem -0.65rem rgba(0,0,0,0.3);
     -moz-box-shadow: 0.5rem 0.5rem 2rem -0.65rem rgba(0,0,0,0.3);
-}
+} */
 .active-notecard form {
     width: 100%;
     height: 100%;

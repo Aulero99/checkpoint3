@@ -16,19 +16,19 @@
 </head>
 
 <body>
-  <header id="userBoardHTM">
-    <!-- STUB This is where the user information replaces the logo -->
-    <!-- <div class="user">
-      <img src="assets/img/logo.svg">
-      <div class="info">
-        <div class="title">USER:</div><h5>Auston</h5>
-        <div class="title">NOTES:</div><h5>0</h5>
+  <header>
+    <div class="user">
+      <div class="img-container">
+        <img src="assets/img/logo.svg">
+        <div class="note-count" id="noteCountHTM">0</div>
       </div>
-    </div> -->
+      <div class="info" id="userBoardHTM">
 
-    <img src="assets/img/logo.svg">
+      </div>
+    </div>
   
   </header>
+  
   <main class="container-fluid">
 
     <section class="row" id="activeBoardHTM">
@@ -58,7 +58,11 @@
     </section>
     
   </main>
+
   <footer class="container-fluid">
+    <!-- <section class="card-count">
+      <h5 id="cardCountHTM">NOTES:</h5>
+    </section> -->
 
     <section class="row card-group card-group-scroll" id="noteBoardHTM">
     
