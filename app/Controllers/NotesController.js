@@ -28,10 +28,10 @@ function _drawActiveNote(){
     }
 }
 
-
 export class NotesController {
 
     constructor(){
+        _drawNotes()
         appState.on('userName', _drawNotes)
         appState.on('activeNote', _drawActiveNote)
         appState.on('notes', _drawNotes)
@@ -43,6 +43,7 @@ export class NotesController {
 
     alterNote(noteId){
         window.event?.preventDefault()
+        // @ts-ignore
         const form = window.event.target
 
         let formData = getFormData(form)
@@ -54,9 +55,9 @@ export class NotesController {
         notesService.newNote()
     }
 
-    changeColor(noteId, color){
+    alterContent(noteId, content, type){
         window.event?.preventDefault()
-        notesService.changeColor(noteId, color)
+        notesService.alterContent(noteId,content,type)
     }
 
     async deleteNote(noteId){
