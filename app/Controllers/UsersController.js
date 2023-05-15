@@ -6,14 +6,12 @@ import { setHTML } from "../Utils/Writer.js";
 // TODO This is not working for.....some reason. Fix it somehow
 // function _drawTemplateUser(){
 //     let users = appState.users
-//     console.log('the users are',users)
 //     let user = appState.userName
-//     console.log('the user is',user)
 //     let filteredUser = users.filter(u => u.name == user)
-//     console.log('the filtered user is',filteredUser)
-//     let template = filteredUser.UserTemplate
+//     let template = ''
 
-//     console.log(template)
+//     filteredUser.forEach(u => template += u.UserTemplate)
+//     console.log('The filtered template is',template)
 
 //     setHTML('userBoardHTM', template)
 // }
@@ -57,9 +55,6 @@ export class UsersController {
 
     constructor(){
         // Working Code
-        _drawUser()
-        appState.on('notesNum', _drawUser)
-        appState.on('autoSave', _drawUser)
         
 //TODO this code pulls from the template, but for some reason will not write, I do not know why
         // _drawTemplateUser()
