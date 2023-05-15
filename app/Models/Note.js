@@ -5,7 +5,7 @@ export class Note{
         this.id = data.id || generateId()
         this.title = data.title || 'New Note'
         this.content = data.content || ''
-        this.created = data.date || this.ComputeDateCreated
+        this.created = data.created || this.ComputeDateCreated
         this.edited = data.edited || 'Never'
         this.color = data.color || 'white'
         this.user = data.user 
@@ -88,11 +88,6 @@ export class Note{
     }
 
     get ComputeDateCreated() {
-        // let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-        // let month = new Date().getMonth()
-        // let day = new Date().getDate()
-        // let date = this.created 
-        // return months[month] + ' ' + day
 
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
