@@ -1,6 +1,10 @@
 import { appState } from "../AppState.js";
-// import { saveState } from "../Utils/Store.js";
-// import { User } from "../Models/User.js";
+import { saveState } from "../Utils/Store.js";
+import { User } from "../Models/User.js";
+
+function _saveUsers() {
+    saveState('users', appState.users)
+  }
 
 class UsersService{
     autosave() {
@@ -18,11 +22,20 @@ class UsersService{
     }
 
     verifyUser(input) {
-        try {
-            // Logs the username in the appData as all lowercase
-            let userLower = input.toLowerCase()
-            appState.userName = userLower
-        }catch (error) {console.error(error)}
+        let userLower = input.toLowerCase()
+        appState.userName = userLower
+        let user = appState.userName
+        let users = appState.users
+        
+
+        let filteredUser = users.filter(u => u.name == user)
+        let newUser = new User({name:user})
+
+        console.log(filteredUser)
+
+        if (filteredUser.length == 0){
+            users.push(newUser)
+        }
 
         // asks the numCheck to check to see how many notes they have
         this.noteNumCheck()
