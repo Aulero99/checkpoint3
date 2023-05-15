@@ -48,6 +48,9 @@ class NotesService{
         let foundNote = appState.notes.find(n => n.id == noteId)
         
         if(type == 'title'){
+            if(content.length < 3){
+                return
+            }
             // @ts-ignore
             foundNote.title = content
         }

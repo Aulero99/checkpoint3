@@ -5,7 +5,7 @@ export class Note{
         this.id = data.id || generateId()
         this.title = data.title || 'New Note'
         this.content = data.content || ''
-        this.created = data.date || data.ComputeDateCreated
+        this.created = data.date || this.ComputeDateCreated
         this.edited = data.edited || 'Never'
         this.color = data.color || 'white'
         this.user = data.user 
@@ -52,7 +52,7 @@ export class Note{
                         <option value="black">Black</option>
                     </select>
 
-                    <p for="Date Created">Created: ${this.ComputeDateCreated} | Updated: ${this.edited}</p>
+                    <p for="Date Created">Created: ${this.created} | Updated: ${this.edited}</p>
                     
                     <p>Characters: ${this.ComputeCharacters}</p>
                     <div class="d-flex flex-row justify-content-around">
@@ -88,11 +88,35 @@ export class Note{
     }
 
     get ComputeDateCreated() {
+        // let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+        // let month = new Date().getMonth()
+        // let day = new Date().getDate()
+        // let date = this.created 
+        // return months[month] + ' ' + day
+
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-        let month = new Date().getMonth()
-        let day = new Date().getDate()
-        let date = this.created 
-        return months[month] + ' ' + day
+
+        let month = (new Date().getMonth())
+        let date = new Date().getDate().toString()
+        let hourMilit = new Date().getHours()
+        let minutesSd = new Date().getMinutes().toString()
+        
+        let minutes = ''
+        let time = '' 
+
+        if(minutesSd.length > 1){
+            minutes = minutesSd
+        }else{
+            minutes = '0' + minutesSd
+        }
+
+        if(hourMilit > 12){time = (hourMilit - 12).toString() + ':' + minutes + ' pm'}
+        else if(hourMilit == 0){time = (hourMilit + 12).toString() + ':' + minutes + ' am'}
+        else {time = hourMilit.toString() + ':' + minutes + ' am'}
+
+        let finalTime =  months[month] + ' ' + date + ', ' + time
+
+        return finalTime
     }
 
     get ComputeContent(){
